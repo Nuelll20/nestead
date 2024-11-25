@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class NestedNo5 {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+
+        System.out.print("Masukkan nilai n: ");
+        int n = scn.nextInt();
+        System.out.println("Segitiga Pascal " + n + ": ");
+
+        for (int r = 0; r < n; r++) {
+            for (int k = 0; k <= r; k++) {
+                // Menghitung n! / (k! * (n - k)!)
+                int nFak = 1;
+                for (int i = 1; i <= r; i++) {
+                    nFak *= i; // Menghitung r!
+                }
+
+                int kFak = 1;
+                for (int i = 1; i <= k; i++) {
+                    kFak *= i; // Menghitung k!
+                }
+
+                int rFak = 1;
+                for (int i = 1; i <= (r - k); i++) {
+                    rFak *= i; // Menghitung (r - k)!
+                }
+
+                int combinasi = nFak / (kFak * rFak); // Rumus kombinasi
+                System.out.print(combinasi + " ");
+            }
+            System.out.println(); // Pindah ke baris berikutnya
+        }
+        scn.close();
+    }
+}
