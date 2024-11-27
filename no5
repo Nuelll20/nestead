@@ -1,24 +1,26 @@
-public class nesteadNo3 {
-    public static void main(String[] args){
-        //looping memori jam sampai 12
-        for (int jam = 1; jam <= 12; jam++ ) {
-            for (int menit = 1; menit <= 60; menit++) {
-                
-                //looping dan mencetak blok detik
-                System.out.print("Detik: ");
-                 for (int detik = 1; detik <= 60; detik++) {
-                    System.out.print(detik+ " ");
-                   
-                }
-                //setelah blok detik, diberi spasi
-                System.out.println();
+import java.util.Scanner;
+public class nesteadNo5 {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        System.out.print("Masukkan nilai n: ");
+        int n = scn.nextInt(); //baca memori n
 
-                //mencetak menit dan isi memorinya
-                System.out.println("Menit: "+menit);
+        System.out.println("Maka kita akan mencari Segitiga Pascal baris "+n+ " : ");
+
+        //membuat baris kebawah
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j < n - i; j++) {
+                System.out.print(" ");
             }
-            //mencetak jam dan isi memorinya
-            System.out.println("Jam  : "+jam);
+            int kombinasi = 1; //insialisasi nilai awal C (n,0) = 1
+            System.out.print(kombinasi+ " "); //menampilkan C(i,0)
+
+            //membuat baris kesamping
+            for (int r = 1; r <= i; r++) {
+                kombinasi = kombinasi * (i - r + 1) / r; //menghitung C(i,r)
+                System.out.print(kombinasi+ " "); //menampilkan C(i,r)
+            }
+            System.out.println();
         }
     }
 }
-
