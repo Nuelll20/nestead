@@ -1,0 +1,64 @@
+import java.util.Scanner;
+public class nesteadNo2 {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        System.out.print("Masukkan jumlah penduduk: ");
+        int n = scn.nextInt();
+        System.out.println();
+
+        //inisialisasi memori bertipe data integer
+        int usia, u020 = 0, u2140 = 0, u4160 = 0, u6180 = 0, u81100 = 0;
+        
+
+        //melakukan looping dengan isi memori i
+        for (int i = 1; i <= n; i++) { 
+            System.out.print("Masukkan usia warga ke-" +i+ ": ");
+            usia = scn.nextInt();
+            
+            //menentukan keputusan berdasarkan isi memori usia
+            if (usia <= 20) {
+                u020++;
+            }else if (usia <= 40) {
+                u2140++;
+            }else if (usia <= 60) {
+                u4160++;
+            }else if (usia <= 80) {
+                u6180++;
+            }else {
+                u81100++;
+            }
+            
+        }
+
+            //menampilkan hasil dari inputan user dan looping untuk diagram batang
+            System.out.print("0 - 20\t: ");
+            for (int j = 1; j <= u020; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            
+            System.out.print("21 - 40\t: ");
+            for (int j = 1; j <= u2140; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            
+            System.out.print("41 - 60\t: ");
+            for (int j = 1; j <= u4160; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+
+            System.out.print("61 - 80\t: ");
+            for (int j = 1; j <= u6180; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+
+            System.out.print("81 - 100: ");
+            for (int j = 1; j <= u81100; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+    }
+}
